@@ -250,7 +250,7 @@ def github_email():
     return out
 
 def vscode_conf():
-    output = os.open('code --version').read().split()
+    output = os.popen('code --version').read().split()
     ver = output[0] if output else "Not installed"
     import getpass
     default = f'/home/{getpass.getuser()}/.config/Code/User/settings.json'
